@@ -10,6 +10,8 @@ io.on("connection", function (socket) {
     io.emit("max", "hello from server")
     socket.on("sony", (msg) => {
         console.log(msg)
+        // socket.emit("max", msg)
+        socket.broadcast.emit("max", msg)
     })
 });
 // end of socket.io logic
