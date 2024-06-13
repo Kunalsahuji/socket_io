@@ -8,6 +8,9 @@ io.on("connection", function (socket) {
     console.log("A user connected");
 
     io.emit("max", "hello from server")
+    socket.on("sony", (msg) => {
+        console.log(msg)
+    })
 });
 // end of socket.io logic
 

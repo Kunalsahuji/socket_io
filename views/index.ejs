@@ -8,12 +8,21 @@
 </head>
 
 <body>
+  <input type="text" name="message" placeholder="enter message">
+  <button>Submit</button>
   <script src="/socket.io/socket.io.js"></script>
   <script>
     var socket = io();
     socket.on("max", ((msg) => {
       console.log(msg)
     }))
+    const button = document.querySelector('button')
+    const input = document.querySelector('input')
+    button.addEventListener('click', () => {
+      const message = input.value
+      socket.emit("sony", message)
+    })
+
   </script>
 </body>
 
